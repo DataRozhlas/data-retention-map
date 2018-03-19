@@ -29,7 +29,7 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    $.getJSON('./data/mapa.json', function(data) {
+    $.getJSON('https://dev.datarozhlas.cz/data-retention-map/data/mapa.json', function(data) {
         var lineCoords = [];
         var cellMarkers = [];
         Object.keys(data).forEach(function(k) {

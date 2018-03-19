@@ -24,10 +24,17 @@
 
 <script>
     var map = L.map('map');
+    map.scrollWheelZoom.disable();
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    $.ajaxSetup({
+        headers : {
+            'Host' : 'irozhlas.cz'
+        }
+    });
 
     $.getJSON('https://dev.datarozhlas.cz/data-retention-map/data/mapa.json', function(data) {
         var lineCoords = [];
